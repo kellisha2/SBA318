@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+</head>
+
+<body>
+
+    <%- include('partials/header.ejs') %>
+
+        <main>
+            <section>
+                <h2>Products</h2>
+
+                <div class="products">
+                    <% products.forEach(function(product){ %>
+                        <div class="product">
+                            <% if (product.image) { %>
+                                <img src="<%= product.image %>" alt="<%= product.category %>" <% } %>
+                                <h2>Category: <%= product.category %>
+                                </h2>
+                                <p>Color: <%= product.color %>
+                                </p>
+                                <p>Inventory: <%= product.inventory %>
+                                </p>
+                        </div>
+                        <% }); %>
+                </div>
+            </section>
+        </main>
+</body>
+
+</html>
